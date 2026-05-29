@@ -125,6 +125,8 @@ Ks 0.0 0.0 0.0
         mtl_path.write_text(mtl)
 
         o3d.io.write_triangle_mesh(str(obj_path), mesh)
+        obj_text = obj_path.read_text()
+        obj_path.write_text(f"mtllib scene.mtl\n{obj_text}\nusemtl textureMat\n")
         fbx_path = output_dir / "scene.fbx"
 
         try:
