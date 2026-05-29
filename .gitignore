@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+*.egg
+
+# Output files
+output/
+
+# Environment & config
+.env
+config.local.yaml
+
+# OS junk
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Test artifacts
+test_*.png
+test_*.mp4
+test_*.wav

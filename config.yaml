@@ -1,0 +1,48 @@
+dry_run: true
+
+# Get a free token at https://huggingface.co/settings/tokens
+hf_token: ""
+
+models:
+  glm:
+    provider: openai_compatible
+    use_templates: true
+    api_base: "http://localhost:1234/v1"
+    api_key: "lm-studio"
+    model_name: "not-needed"
+    temperature: 0.3
+    max_tokens: 2048
+
+  zimage:
+    provider: hf_api
+    model_id: "Tongyi-MAI/Z-Image-Turbo"
+    width: 1024
+    height: 1024
+
+  ltx:
+    provider: hf_api
+    model_id: "Lightricks/LTX-2"
+    width: 512
+    height: 512
+    num_frames: 16
+
+  hunyuan:
+    provider: gradio_space
+    space_id: "tencent/HunyuanWorld-Mirror"
+    frame_stride: 2
+    max_frames: 30
+
+post_processing:
+  outlier_removal:
+    nb_neighbors: 25
+    std_ratio: 1.8
+  poisson:
+    depth: 10
+  simplify:
+    target_percentage: 0.1
+  texture:
+    resolution: 4096
+
+output:
+  directory: "./output"
+  export_format: "fbx"

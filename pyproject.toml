@@ -1,0 +1,24 @@
+[project]
+name = "text-to-3d"
+version = "1.0.0"
+description = "LangGraph pipeline for generating explorable 3D worlds from text descriptions"
+requires-python = ">=3.11"
+dependencies = [
+    "langchain>=0.3.0",
+    "langchain-community>=0.3.0",
+    "langchain-openai>=0.3.0",
+    "langgraph>=0.4.0",
+    "open3d>=0.18.0",
+    "numpy>=1.24.0",
+    "Pillow>=10.0.0",
+    "pyyaml>=6.0",
+    "opencv-python>=4.8.0",
+    "huggingface-hub>=0.27.0",
+    "gradio-client>=2.0.0",
+    "imageio>=2.35.0",
+    "imageio-ffmpeg>=0.6.0",
+    "xatlas @ git+https://github.com/jpcy/xatlas.git",
+]
+
+[project.scripts]
+text-to-3d = "main:main"
